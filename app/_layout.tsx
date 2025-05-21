@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import {
   Button,
   FlatList,
+  Image,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
+import images from "../assets/images/adaptive-icon.png";
 
 type Todo = {
   text: string;
@@ -71,6 +73,17 @@ export default function TodoApp() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Todo App</Text>
+      <Image
+        source={images}
+        style={{
+          width: 100,
+          height: 100,
+          marginBottom: 20,
+          alignSelf: "center",
+        }}
+        // resizeMode="contain"
+        resizeMode="contain"
+      />
       <TextInput
         style={styles.input}
         placeholder="Add a new task"
